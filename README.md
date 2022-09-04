@@ -85,7 +85,7 @@ The component is already configured with 6 breakpoints to be based on responsive
 
 > **Important:** :exclamation: The component should not be rendered inside another component that prevents **ResponsiveDetecter** from occupying 100% of it's screen, since this component has the styles of: position: absolute, width: 100% and height: 100vh.
 
-  :heavy_multiplication_x: Bad usage example:
+  :x: Bad usage example:
 
   ```javascript
   import ResponsiveDetecter from 'react-responsive-detecter';
@@ -109,6 +109,8 @@ The component is already configured with 6 breakpoints to be based on responsive
 
 The component has a gear icon, which, when pressed, will display a menu of small settings that can be of great help when working with it.
 
+> **Note:** :sunny: The configuration of these options is persisted in the localStorage of the browser under the key 'LayoutConfig', this is useful so that every time your project is opened in the same browser, the component respects its configuration.
+
 ![Setting grid](assets/example2.JPG)
 
 - Enable grid:
@@ -117,7 +119,7 @@ The component has a gear icon, which, when pressed, will display a menu of small
 
 - Grid in front:
 
-  Enabling this option, will send the grid to the front of your development, by default it is at the bottom. This is useful when you have a component with a background color or an image, and you want these elements not to cover the rows or columns.\
+  Enabling this option, will send the grid to the front of your development, by default it is at the bottom. This is useful when you have a component with a background color or an image, and you want these elements not to cover the rows or columns.
 
   > Doing this will help you align the elements that are inside other components with font color or text inside images, just keep in mind that since the grid is in front, many or all of its elements cannot be selected, since the grid is above them.
 
@@ -166,6 +168,8 @@ Description of the data types used by some of the props.
 
 ### ColumnDistributionType
 
+  This data type is an object, where only the **INIT** attribute is required, they have the following structure.
+
   **Interface:**
 
   | Name | Type | Required | Description |
@@ -180,11 +184,15 @@ Description of the data types used by some of the props.
 
 ### RowHeightType
 
+  This data type is numeric, but can only take one of the following values.
+
   **Type:**
 
   | Name | Type | Description |
   |------|------|-------------|
   | rowHeight | 7 \\| 8 \\| 10 \\| 12 \\| 14 \\| 16 \\| 18 \\| 20 \\| 22 \\| 24 | Number of columns to render on a given screen size |
+
+&nbsp;
 
 ## keep in mind when using any of these props
 
