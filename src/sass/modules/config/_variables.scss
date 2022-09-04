@@ -1,0 +1,51 @@
+/* -----------------------------------*\
+  # Colors
+\*----------------------------------- */
+
+// COLORS
+
+$rd-primary: #303dd3;
+$rd-primary-light: #929bfd;
+$rd-secondary: #20202b;
+$rd-black: #1f2020;
+$rd-white: #f8f8f8;
+$rd-error: #ff5959;
+$rd-gray-dark: #757575;
+$rd-gray: #abaeb3;
+$rd-gray-light: #ddd;
+$rd-gray-lighter: #ececec;
+$rd-grill: #f59794;
+$rd-grill-column: #dac2c2;
+
+// END COLORS
+
+/* -----------------------------------*\
+  # Box sizes
+\*----------------------------------- */
+$rd-box-base: 8px;                        // 8px   BASE
+$rd-box-2: calc($rd-box-base * 2);        // 16px
+$rd-box-3: calc($rd-box-base * 3);        // 24px
+$rd-box-4: calc($rd-box-base * 4);        // 32px  STANDARD
+$rd-box-6: calc($rd-box-base * 6);        // 48px
+$rd-box-8: calc($rd-box-base * 8);        // 64px
+$rd-box-32: calc($rd-box-base * 32);      // 64px
+
+/* ------------------------------------*\
+  # Screen sizes
+\*------------------------------------ */
+$rd-xs: 350px;
+$rd-sm: 600px;
+$rd-md: 905px;
+$rd-lg: 1280px;
+$rd-xl: 1440px;
+$rd-xx: 1920px;
+
+/* ------------------------------------*\
+  # Querys
+\*------------------------------------ */
+$rd-mq-xs: "screen and (min-width: #{$rd-xs})";
+$rd-mq-sm: "screen and (min-width: #{$rd-sm})";
+$rd-mq-md: "screen and (min-width: #{$rd-md})";
+$rd-mq-lg: "screen and (min-width: #{$rd-lg})";
+$rd-mq-xl: "screen and (min-width: #{$rd-xl})";
+$rd-mq-xx: "screen and (min-width: #{$rd-xx})";

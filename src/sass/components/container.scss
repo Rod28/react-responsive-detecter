@@ -1,0 +1,22 @@
+@use "../modules/m-master" as mt;
+@use "../modules/mixins/mixin-querys" as mx-q;
+@use "../modules/mixins/mixin-utils" as mx-u;
+
+.container-responsive-detecter {
+  @include mx-u.mar-x(auto);
+
+  width: calc(100% - #{mt.$rd-box-2});
+
+  @include mx-q.xs {
+    width: calc(100% - #{mt.$rd-box-4});
+  }
+
+  @include mx-q.sm {
+    width: calc(100% - #{mt.$rd-box-8});
+  }
+
+  @include mx-q.lg {
+    width: 90%;
+    max-width: 1600px;
+  }
+}

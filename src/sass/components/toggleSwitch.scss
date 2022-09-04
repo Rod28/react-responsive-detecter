@@ -1,0 +1,74 @@
+@use "../modules/m-master" as mt;
+@use "../modules/mixins/mixin-utils" as mx-u;
+
+$rd-animation-time: 250ms;
+$rd-height-container: 20px;
+$rd-width-container: calc(#{$rd-height-container} * 2);
+$rd-button-size: calc($rd-height-container * 0.85);
+
+.toggle-switch-responsive-detecter {
+  display: flex;
+  align-items: center;
+
+  &__container {
+    position: relative;
+    display: inline-block;
+    width: $rd-width-container;
+    height: $rd-height-container;
+    user-select: none;
+  }
+
+  &__title {
+    margin-right: mt.$rd-box-2;
+    font-family: mt.$rd-font-family;
+    font-size: 12px;
+    color: mt.$rd-gray-light;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-width: 0;
+    border-radius: $rd-height-container;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background $rd-animation-time ease-in-out;
+
+    &::before {
+      @include mx-u.square($rd-button-size);
+
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      border-radius: 50%;
+      background: mt.$rd-white;
+      transform: translateY(-50%);
+      transition: transform $rd-animation-time ease-in-out;
+    }
+  }
+
+  // Disabled styles
+  &__checkbox:disabled + &__label {
+    cursor: auto;
+    background: mt.$rd-gray;
+
+    &::before {
+      background: mt.$rd-gray-light;
+    }
+  }
+
+  // State change
+  &__checkbox:checked + &__label {
+    &::before {
+      transform: translate(115%, -50%);
+    }
+  }
+}

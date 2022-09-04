@@ -1,0 +1,83 @@
+@use "./variables" as v;
+
+// Background
+.rd-bg-primary {
+  background: v.$rd-primary;
+}
+
+.rd-bg-primary-light {
+  background: v.$rd-primary-light;
+}
+
+.rd-bg-secondary {
+  background: v.$rd-secondary;
+}
+
+.rd-bg-black {
+  background: v.$rd-black;
+}
+
+.rd-bg-white {
+  background: v.$rd-white;
+}
+
+.rd-bg-error {
+  background: v.$rd-error;
+}
+
+.rd-bg-gray-dark {
+  background: v.$rd-gray-dark;
+}
+
+.rd-bg-gray {
+  background: v.$rd-gray;
+}
+
+.rd-bg-gray-light {
+  background: v.$rd-gray-light;
+}
+
+.rd-bg-gray-lighter {
+  background: v.$rd-gray-lighter;
+}
+
+// Fill
+.rd-fill-primary {
+  fill: v.$rd-primary;
+}
+
+.rd-fill-primary-light {
+  fill: v.$rd-primary-light;
+}
+
+.rd-fill-secondary {
+  fill: v.$rd-secondary;
+}
+
+.rd-fill-black {
+  fill: v.$rd-black;
+}
+
+.rd-fill-white {
+  fill: v.$rd-white;
+}
+
+.rd-fill-error {
+  fill: v.$rd-error;
+}
+
+.rd-fill-gray-dark {
+  fill: v.$rd-gray-dark;
+}
+
+.rd-fill-gray {
+  fill: v.$rd-gray;
+}
+
+.rd-fill-gray-light {
+  fill: v.$rd-gray-light;
+}
+
+.rd-fill-gray-lighter {
+  fill: v.$rd-gray-lighter;
+}

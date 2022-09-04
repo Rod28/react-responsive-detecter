@@ -1,0 +1,248 @@
+/* ------------------------------------*\
+  # Main
+\*------------------------------------ */
+
+@use "./modules/m-master" as mt;
+@use "./modules/mixins/mixin-utils" as mx-u;
+
+.label-responsive-detecter {
+  position: fixed;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  max-width: calc(100vw - #{mt.$rd-box-4});
+  padding: mt.$rd-box-base;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  background: rgba($color: mt.$rd-secondary, $alpha: 80%);
+  backdrop-filter: blur(3px);
+
+  &--top {
+    top: mt.$rd-box-2;
+  }
+
+  &--left {
+    left: mt.$rd-box-2;
+    flex-direction: row-reverse;
+  }
+
+  &--right {
+    right: mt.$rd-box-2;
+    flex-direction: row;
+  }
+
+  &--bottom {
+    bottom: mt.$rd-box-2;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99998;
+    width: 100%;
+    height: 100vh;
+    outline: none;
+    box-sizing: border-box;
+    background: rgba($color: mt.$rd-black, $alpha: 20%);
+    transition: 300ms ease-in-out;
+    transition-property: opacity visibility;
+
+    &--open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &--close {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &__container {
+    &--left {
+      margin-right: mt.$rd-box-base;
+    }
+
+    &--right {
+      margin-left: mt.$rd-box-base;
+    }
+  }
+
+  &__button-icon {
+    padding: 0;
+    border: 1px solid transparent;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    // Remove the dotted line in Firefox
+    &::-moz-focus-inner {
+      border: 0;
+    }
+
+    &--left {
+      margin-right: mt.$rd-box-base;
+    }
+
+    &--right {
+      margin-left: mt.$rd-box-base;
+    }
+  }
+
+  &__icon {
+    @include mx-u.square(mt.$rd-box-3);
+  }
+
+  &__title-screen-size {
+    display: block;
+    margin: 0;
+    font-family: mt.$rd-font-family;
+    color: mt.$rd-primary-light;
+
+    &--error {
+      max-width: mt.$rd-box-32;
+      color: mt.$rd-error;
+    }
+  }
+
+  &__screen-size {
+    display: inline-flex;
+    margin: 0;
+    margin-right: 4px;
+    font-family: mt.$rd-font-family;
+    color: mt.$rd-primary-light;
+  }
+
+  // Menu
+  &__menu {
+    position: absolute;
+    width: 325px;
+    max-width: calc(100vw - #{mt.$rd-box-4});
+    padding: mt.$rd-box-3 mt.$rd-box-2 mt.$rd-box-2;
+    border-radius: mt.$rd-box-base;
+    outline: none;
+    box-sizing: border-box;
+    background: rgba($color: mt.$rd-secondary, $alpha: 80%);
+    transition: 300ms ease-in-out;
+    transition-property: opacity visibility;
+    box-shadow: 5px 5px 10px rgba($color: mt.$rd-black, $alpha: 75%);
+
+    &--top {
+      top: 100%;
+      margin-top: mt.$rd-box-2;
+    }
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    &--bottom {
+      bottom: 100%;
+      margin-bottom: mt.$rd-box-2;
+    }
+
+    &--open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &--close {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &__title-menu {
+    padding-bottom: mt.$rd-box-base;
+    font-family: mt.$rd-font-family;
+    font-size: 16px;
+    color: mt.$rd-gray-light;
+    border-bottom: 1px solid mt.$rd-gray-dark;
+  }
+
+  &__title-field {
+    padding-bottom: mt.$rd-box-base;
+    margin-top: mt.$rd-box-4;
+    font-family: mt.$rd-font-family;
+    font-size: 14px;
+    color: mt.$rd-gray-light;
+  }
+
+  &__field-menu {
+    margin-bottom: mt.$rd-box-2;
+  }
+
+  &__field-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.grid-layout-responsive-detecter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  outline: none;
+  box-sizing: border-box;
+
+  &__column-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    &--at-bottom {
+      z-index: -1;
+    }
+  }
+
+  &__row-container {
+    position: relative;
+  }
+
+  &__column-body {
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: mt.$rd-box-2;
+    height: 100%;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  &__column {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    outline: none;
+    box-sizing: border-box;
+    background: mt.$rd-grill-column;
+  }
+
+  &__row-line {
+    position: absolute;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 1px;
+    outline: none;
+    box-sizing: border-box;
+    background: mt.$rd-grill;
+  }
+}

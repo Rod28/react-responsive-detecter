@@ -1,0 +1,98 @@
+{
+  "name": "react-responsive-detecter",
+  "version": "1.0.0",
+  "description": "Component for the development environment, which detects the screen size and generates a fully customizable responsive grid for React applications.",
+  "author": {
+    "name": "Rodrigo GS",
+    "email": "r.garez28@gmail.com"
+  },
+  "license": "MIT",
+  "main": "dist/cjs/index.cjs.js",
+  "module": "dist/es/index.es.js",
+  "types": "dist/index.d.ts",
+  "homepage": "https://github.com/Rod28/react-responsive-detecter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rod28/react-responsive-detecter"
+  },
+  "bugs": {
+    "url": "https://github.com/Rod28/react-responsive-detecter/issues"
+  },
+  "keywords": [
+    "responsive",
+    "react",
+    "grid",
+    "detecter",
+    "design",
+    "responsive detecter",
+    "screen size detector"
+  ],
+  "engines": {
+    "node": ">= 12.13.0"
+  },
+  "scripts": {
+    "prepare": "git config core.hooksPath .githooks && npm run build",
+    "start": "webpack serve",
+    "clean-up": "rm -rf dist",
+    "clean-up:cjs": "cd dist/cjs/ && rm -rf components/ constants/ helpers/ types/ index.d.ts index.d.ts.map && cd ../../",
+    "clean-up:es": "cd dist/es/ && rm -rf components/ constants/ helpers/ types/ index.d.ts index.d.ts.map && cd ../../",
+    "build": "npm run clean-up && rollup -c && npm run clean-up:cjs && npm run clean-up:es",
+    "lint": "eslint --ext .ts .",
+    "lint:fix": "eslint --fix --ext .ts .",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "stylelint": "stylelint '**/*.{css, scss, sass}'",
+    "stylelint:fix": "stylelint --fix '**/*.{css, scss, sass}'",
+    "format": "npm run lint:fix && npm run prettier:fix && npm run stylelint:fix",
+    "test:pre-commit": "jest --bail",
+    "test": "jest --coverage --watchAll --verbose"
+  },
+  "dependencies": {
+    "local-storage-to-object": "^1.3.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-flow-strip-types": "^7.18.9",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.4.0",
+    "@types/jest": "^28.1.6",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
+    "babel-loader": "^8.2.5",
+    "concurrently": "^7.3.0",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3",
+    "prettier": "^2.7.1",
+    "rollup": "^2.78.1",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.54.5",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "stylelint": "^14.11.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-order": "^5.0.0",
+    "ts-jest": "^28.0.7",
+    "ts-node": "^10.9.1",
+    "typescript": "4.7.4",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0"
+  }
+}

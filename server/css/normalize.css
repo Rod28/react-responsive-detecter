@@ -1,0 +1,27 @@
+html {
+  box-sizing: border-box;
+  background: #eee;
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+p {
+  margin: 0;
+}

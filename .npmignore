@@ -1,0 +1,37 @@
+# Source code
+src/
+
+# Tests
+coverage/
+
+# Git
+.githooks/
+.gitignore
+
+# Npm
+.npmignore
+
+# Assets
+assets/
+
+# Lints
+.eslintrc.js
+.prettierignore
+.prettierrc.js
+stylelint.config.js
+
+# Jest
+jest.config.ts
+
+# Babel
+babel.config.js
+
+# Rollup
+rollup.config.js
+
+# Webpack
+server/
+webpack.config.js
+
+# Typescript
+tsconfig.json

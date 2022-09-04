@@ -1,0 +1,41 @@
+/* ------------------------------------*\
+  # Utils
+\*------------------------------------ */
+
+/*
+  Allows to place the width and height of the same size.
+*/
+@mixin square($side-square) {
+  width: $side-square;
+  height: $side-square;
+  min-width: $side-square;
+  min-height: $side-square;
+}
+
+/*
+  Allows to place the padding on the "x" axis and "y" axis of the same
+  size respectively.
+*/
+@mixin pad-x($side-pad-x) {
+  padding-right: $side-pad-x;
+  padding-left: $side-pad-x;
+}
+
+@mixin pad-y($side-pad-y) {
+  padding-top: $side-pad-y;
+  padding-bottom: $side-pad-y;
+}
+
+/*
+  Allows to place the margin on the "x" axis and "y" axis of the same
+  size respectively.
+*/
+@mixin mar-x($side-mar-x) {
+  margin-right: $side-mar-x;
+  margin-left: $side-mar-x;
+}
+
+@mixin mar-y($side-mar-y) {
+  margin-top: $side-mar-y;
+  margin-bottom: $side-mar-y;
+}
