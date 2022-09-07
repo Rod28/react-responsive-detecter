@@ -15,7 +15,8 @@ class ToggleSwitch extends React.Component<
     defaultValue: false,
     disabled: false,
     color: 'primary',
-    colorOff: 'gray-dark'
+    colorOff: 'gray-dark',
+    textColor: 'gray-light'
   };
 
   constructor(props: ToggleSwitchProps) {
@@ -41,15 +42,22 @@ class ToggleSwitch extends React.Component<
     const { checked } = this.state;
 
     // Props
-    const { title, name, color, colorOff, disabled } = this.props;
+    const { title, name, color, colorOff, textColor, disabled } = this.props;
 
     // Gets the current background color of the component.
     const currentColor = checked ? `rd-bg-${color}` : `rd-bg-${colorOff}`;
 
+    // Gets the current text color of the component.
+    const currentTextColor = `rd-text-${textColor}`;
+
     return (
       <div className="toggle-switch-responsive-detecter">
         {title && (
-          <p className="toggle-switch-responsive-detecter__title">{title}:</p>
+          <p
+            className={`toggle-switch-responsive-detecter__title ${currentTextColor}`}
+          >
+            {title}:
+          </p>
         )}
 
         <div className="toggle-switch-responsive-detecter__container">

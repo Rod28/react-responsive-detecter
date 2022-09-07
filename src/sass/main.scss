@@ -17,8 +17,15 @@
   border-radius: 8px;
   outline: none;
   box-sizing: border-box;
-  background: rgba($color: mt.$rd-secondary, $alpha: 80%);
   backdrop-filter: blur(3px);
+
+  &--dark {
+    background: rgba($color: mt.$rd-theme-dark, $alpha: 85%);
+  }
+
+  &--light {
+    background: rgba($color: mt.$rd-theme-light, $alpha: 85%);
+  }
 
   &--top {
     top: mt.$rd-box-2;
@@ -105,7 +112,14 @@
     display: block;
     margin: 0;
     font-family: mt.$rd-font-family;
-    color: mt.$rd-primary-light;
+
+    &--dark {
+      color: mt.$rd-primary-light;
+    }
+
+    &--light {
+      color: mt.$rd-primary-dark;
+    }
 
     &--error {
       max-width: mt.$rd-box-32;
@@ -118,7 +132,14 @@
     margin: 0;
     margin-right: 4px;
     font-family: mt.$rd-font-family;
-    color: mt.$rd-primary-light;
+
+    &--dark {
+      color: mt.$rd-primary-light;
+    }
+
+    &--light {
+      color: mt.$rd-primary-dark;
+    }
   }
 
   // Menu
@@ -130,10 +151,19 @@
     border-radius: mt.$rd-box-base;
     outline: none;
     box-sizing: border-box;
-    background: rgba($color: mt.$rd-secondary, $alpha: 80%);
     transition: 300ms ease-in-out;
     transition-property: opacity visibility;
     box-shadow: 5px 5px 10px rgba($color: mt.$rd-black, $alpha: 75%);
+
+    &--dark {
+      color: mt.$rd-gray-light;
+      background: rgba($color: mt.$rd-theme-dark, $alpha: 85%);
+    }
+
+    &--light {
+      color: mt.$rd-gray-darker;
+      background: rgba($color: mt.$rd-theme-light, $alpha: 85%);
+    }
 
     &--top {
       top: 100%;
@@ -166,18 +196,17 @@
 
   &__title-menu {
     padding-bottom: mt.$rd-box-base;
+    margin-bottom: mt.$rd-box-4;
     font-family: mt.$rd-font-family;
     font-size: 16px;
-    color: mt.$rd-gray-light;
     border-bottom: 1px solid mt.$rd-gray-dark;
   }
 
   &__title-field {
     padding-bottom: mt.$rd-box-base;
-    margin-top: mt.$rd-box-4;
+    margin-top: mt.$rd-box-3;
     font-family: mt.$rd-font-family;
     font-size: 14px;
-    color: mt.$rd-gray-light;
   }
 
   &__field-menu {

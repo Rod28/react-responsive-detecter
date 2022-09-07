@@ -50,7 +50,8 @@ class ResponsiveDetecter extends React.Component<
         h: window.innerHeight
       },
       positionHorizontal: createDefaultValue('positionHorizontal', 'right'),
-      positionVertical: createDefaultValue('positionVertical', 'bottom')
+      positionVertical: createDefaultValue('positionVertical', 'bottom'),
+      theme: createDefaultValue('theme', 'dark')
     };
     this.handleupdateColumnsNumber = this.handleupdateColumnsNumber.bind(this);
     this.handleResizeScreen = this.handleResizeScreen.bind(this);
@@ -60,6 +61,7 @@ class ResponsiveDetecter extends React.Component<
     this.handleToggleHideRows = this.handleToggleHideRows.bind(this);
     this.handleChangePositionH = this.handleChangePositionH.bind(this);
     this.handleChangePositionV = this.handleChangePositionV.bind(this);
+    this.handleChangeTheme = this.handleChangeTheme.bind(this);
   }
 
   /**
@@ -230,6 +232,17 @@ class ResponsiveDetecter extends React.Component<
     LocalStorage.setItem(this.key, { positionVertical: newPosition });
   }
 
+  /**
+   * Function that is responsible for changing the color of the component's theme, the menu and
+   * the text color.
+   * @param value Turn the light 'theme' on or off
+   */
+  handleChangeTheme(value: boolean): void {
+    const newTheme = value ? 'light' : 'dark';
+    this.setState({ theme: newTheme });
+    LocalStorage.setItem(this.key, { theme: newTheme });
+  }
+
   render() {
     // State
     const {
@@ -242,7 +255,8 @@ class ResponsiveDetecter extends React.Component<
       screen,
       sizeScreen,
       positionHorizontal,
-      positionVertical
+      positionVertical,
+      theme
     } = this.state;
 
     // Props
@@ -268,6 +282,13 @@ class ResponsiveDetecter extends React.Component<
 
     // We convert the numeric value 'columnsNumber' to an array with values
     const numberCurrentColumns = new Array(this.columnsNumber).fill('*');
+
+    // Obtiene los colores de texto por tema, para el componente ToggleSwitch
+    const currentTextColor = theme === 'dark' ? 'gray-light' : 'gray-darker';
+
+    // Obtiene los colores por tema, para el componente responsive-detecte
+    const settingsColorDark = isOpenSettings ? 'gray' : 'primary-light';
+    const settingsColorLight = isOpenSettings ? 'gray-dark' : 'primary-dark';
 
     return (
       <>
@@ -324,6 +345,7 @@ class ResponsiveDetecter extends React.Component<
               label-responsive-detecter
               label-responsive-detecter--${positionHorizontal}
               label-responsive-detecter--${positionVertical}
+              label-responsive-detecter--${theme}
             `}
             >
               {/* Settings Icon */}
@@ -334,7 +356,9 @@ class ResponsiveDetecter extends React.Component<
                 >
                   <Settings
                     className="label-responsive-detecter__icon"
-                    color={isOpenSettings ? 'gray' : 'primary-light'}
+                    color={
+                      theme === 'dark' ? settingsColorDark : settingsColorLight
+                    }
                   />
                 </button>
               )}
@@ -349,10 +373,17 @@ class ResponsiveDetecter extends React.Component<
                   </p>
                 ) : (
                   <>
-                    <p className="label-responsive-detecter__title-screen-size">
+                    <p
+                      className={`
+                        label-responsive-detecter__title-screen-size
+                        label-responsive-detecter__title-screen-size--${theme}
+                      `}
+                    >
                       Size: {screen}
                     </p>
-                    <p className="label-responsive-detecter__screen-size">
+                    <p
+                      className={`label-responsive-detecter__screen-size label-responsive-detecter__screen-size--${theme}`}
+                    >
                       {sizeScreen.w} x {sizeScreen.h}
                     </p>
                   </>
@@ -365,6 +396,7 @@ class ResponsiveDetecter extends React.Component<
                 label-responsive-detecter__menu
                 label-responsive-detecter__menu--${positionHorizontal}
                 label-responsive-detecter__menu--${positionVertical}
+                label-responsive-detecter__menu--${theme}
                 ${menuClass}
               `}
               >
@@ -377,6 +409,7 @@ class ResponsiveDetecter extends React.Component<
                   <ToggleSwitch
                     name="grid"
                     title="Enable grid"
+                    textColor={currentTextColor}
                     defaultValue={isShowGrid}
                     onValue={this.handleToggleShowGrid}
                   />
@@ -387,6 +420,7 @@ class ResponsiveDetecter extends React.Component<
                     <ToggleSwitch
                       name="gridFront"
                       title="Grid in front"
+                      textColor={currentTextColor}
                       defaultValue={isGridFront}
                       disabled={!isShowGrid}
                       onValue={this.handleToggleGridElevation}
@@ -396,6 +430,7 @@ class ResponsiveDetecter extends React.Component<
                     <ToggleSwitch
                       name="hideRows"
                       title="Hide rows"
+                      textColor={currentTextColor}
                       defaultValue={isHideRows}
                       disabled={!isShowGrid}
                       onValue={this.handleToggleHideRows}
@@ -411,6 +446,7 @@ class ResponsiveDetecter extends React.Component<
                     <ToggleSwitch
                       name="positionH"
                       title="Left position"
+                      textColor={currentTextColor}
                       defaultValue={positionHorizontal === 'left'}
                       onValue={this.handleChangePositionH}
                     />
@@ -419,9 +455,22 @@ class ResponsiveDetecter extends React.Component<
                     <ToggleSwitch
                       name="positionV"
                       title="Top position"
+                      textColor={currentTextColor}
+                      defaultValue={positionVertical === 'top'}
                       onValue={this.handleChangePositionV}
                     />
                   </div>
+                </div>
+
+                <p className="label-responsive-detecter__title-field">Theme</p>
+                <div className="label-responsive-detecter__field-menu">
+                  <ToggleSwitch
+                    name="theme"
+                    title="Enable theme light"
+                    textColor={currentTextColor}
+                    defaultValue={theme === 'light'}
+                    onValue={this.handleChangeTheme}
+                  />
                 </div>
               </div>
             </div>

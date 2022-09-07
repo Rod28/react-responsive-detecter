@@ -24,6 +24,7 @@ This grid can be customized and disabled if desired.
   - [ColumnDistributionType](#columndistributiontype)
   - [RowHeightType](#rowheighttype)
 - [keep in mind when using any of these props](#keep-in-mind-when-using-any-of-these-props)
+- [Resources](#resources)
 - [License](#license)
 
 ## Installation
@@ -89,7 +90,6 @@ The component is already configured with 6 breakpoints to be based on responsive
 
   ```javascript
   import ResponsiveDetecter from 'react-responsive-detecter';
-  import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
   const App = () => {
     return (
@@ -134,6 +134,10 @@ The component has a gear icon, which, when pressed, will display a menu of small
 - Top position:
 
   Enabling this option, will position the component at the top side of your screen.
+
+- Enable theme light:
+
+  Enabling this option, will allow you to toggle between the light and dark theme of the component, menu and font color.
 
 &nbsp;
 
@@ -238,7 +242,7 @@ Description of the data types used by some of the props.
 
   ```
 
-  > This will cause only 4 breakpoints to be considered, from 0 to 399 as a init, from 400 to 949 for SM, from 950 to 1279 for MD, and 1280 onwards for LG.
+  > This will cause only 4 breakpoints to be considered, from 0 to 399 as a INIT, from 400 to 949 for SM, from 950 to 1279 for MD, and 1280 onwards for LG.
 
   ---
 
@@ -279,6 +283,12 @@ Description of the data types used by some of the props.
   ---
 
 &nbsp;
+
+## Resources
+
+If you have any ideas to improve this package or any functionality that you would expect it to have, feel free to write to me.
+
+- [Changelog](CHANGELOG)
 
 ## License
 

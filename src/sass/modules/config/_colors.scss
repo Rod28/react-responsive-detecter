@@ -1,16 +1,77 @@
 @use "./variables" as v;
 
+// Text
+.rd-text-primary {
+  color: v.$rd-primary;
+}
+
+.rd-text-primary-dark {
+  color: v.$rd-primary-dark;
+}
+
+.rd-text-primary-light {
+  color: v.$rd-primary-light;
+}
+
+.rd-text-theme-dark {
+  color: v.$rd-theme-dark;
+}
+
+.rd-text-theme-light {
+  color: v.$rd-theme-light;
+}
+
+.rd-text-black {
+  color: v.$rd-black;
+}
+
+.rd-text-white {
+  color: v.$rd-white;
+}
+
+.rd-text-error {
+  color: v.$rd-error;
+}
+
+.rd-text-gray-darker {
+  color: v.$rd-gray-darker;
+}
+
+.rd-text-gray-dark {
+  color: v.$rd-gray-dark;
+}
+
+.rd-text-gray {
+  color: v.$rd-gray;
+}
+
+.rd-text-gray-light {
+  color: v.$rd-gray-light;
+}
+
+.rd-text-gray-lighter {
+  color: v.$rd-gray-lighter;
+}
+
 // Background
 .rd-bg-primary {
   background: v.$rd-primary;
+}
+
+.rd-bg-primary-dark {
+  background: v.$rd-primary-dark;
 }
 
 .rd-bg-primary-light {
   background: v.$rd-primary-light;
 }
 
-.rd-bg-secondary {
-  background: v.$rd-secondary;
+.rd-bg-theme-dark {
+  background: v.$rd-theme-dark;
+}
+
+.rd-bg-theme-light {
+  background: v.$rd-theme-light;
 }
 
 .rd-bg-black {
@@ -23,6 +84,10 @@
 
 .rd-bg-error {
   background: v.$rd-error;
+}
+
+.rd-bg-gray-darker {
+  background: v.$rd-gray-darker;
 }
 
 .rd-bg-gray-dark {
@@ -46,12 +111,20 @@
   fill: v.$rd-primary;
 }
 
+.rd-fill-primary-dark {
+  fill: v.$rd-primary-dark;
+}
+
 .rd-fill-primary-light {
   fill: v.$rd-primary-light;
 }
 
-.rd-fill-secondary {
-  fill: v.$rd-secondary;
+.rd-fill-theme-dark {
+  fill: v.$rd-theme-dark;
+}
+
+.rd-fill-theme-light {
+  fill: v.$rd-theme-light;
 }
 
 .rd-fill-black {
@@ -64,6 +137,10 @@
 
 .rd-fill-error {
   fill: v.$rd-error;
+}
+
+.rd-fill-gray-darker {
+  fill: v.$rd-gray-darker;
 }
 
 .rd-fill-gray-dark {

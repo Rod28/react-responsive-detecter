@@ -5,6 +5,11 @@ import Colors from './colors';
 /* ---------------------------- ResponsiveDetecter ---------------------------- */
 
 /**
+ * Tipos de tema que acepta el menu de configuracion
+ */
+export type ThemeType = 'dark' | 'light';
+
+/**
  * Types of valid screen sizes
  */
 export type SizeNamesTypes = 'XS' | 'SM' | 'MD' | 'LG' | 'XL' | 'XX';
@@ -81,6 +86,7 @@ export interface ResponsiveDetecterState {
   sizeScreen: { w: number; h: number };
   positionHorizontal: PositionHorizontal;
   positionVertical: PositionVertical;
+  theme: ThemeType;
 }
 
 /* ---------------------------- Components ---------------------------- */
@@ -108,9 +114,10 @@ export interface ToggleSwitchProps {
   name: string;
   title?: string;
   defaultValue: boolean;
-  disabled: boolean;
   color: Colors;
   colorOff: Colors;
+  textColor: Colors;
+  disabled: boolean;
   onValue?(val: boolean): void;
 }
 

@@ -3,11 +3,14 @@
  */
 type Colors =
   | 'primary'
+  | 'primary-dark'
   | 'primary-light'
-  | 'secondary'
+  | 'dark'
+  | 'light'
   | 'black'
   | 'white'
   | 'error'
+  | 'gray-darker'
   | 'gray-dark'
   | 'gray'
   | 'gray-light'
