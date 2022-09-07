@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-detecter",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Component for the development environment, which detects the screen size and generates a fully customizable responsive grid for React applications.",
   "author": {
     "name": "Rodrigo GS",

@@ -111,7 +111,7 @@ The component has a gear icon, which, when pressed, will display a menu of small
 
 > **Note:** :sunny: The configuration of these options is persisted in the localStorage of the browser under the key 'LayoutConfig', this is useful so that every time your project is opened in the same browser, the component respects its configuration.
 
-![Setting grid](assets/example2.JPG)
+![Setting grid](assets/example2-1.JPG)
 
 - Enable grid:
 
