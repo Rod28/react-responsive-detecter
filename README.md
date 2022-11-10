@@ -37,6 +37,14 @@ npm install --save-dev react-responsive-detecter
 npm i -D react-responsive-detecter
 ```
 
+Using yarn:
+
+```bash
+yarn add react-responsive-detecter --dev
+
+yarn add react-responsive-detecter -D
+```
+
 ## Quick use
 
 The component is already configured with 6 breakpoints to be based on responsive development, but if these breakpoints do not suit your design or development template, you can modify their value for those you consider useful.

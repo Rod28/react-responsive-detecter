@@ -109,8 +109,6 @@ class ResponsiveDetecter extends React.Component<
      * render is recalculated.
      */
     if (!prevState.isShowGrid && isShowGrid) {
-      console.log('reactivate');
-
       this.handleupdateColumnsNumber(screen);
     }
   }
