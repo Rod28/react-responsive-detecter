@@ -3,8 +3,10 @@ import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
-import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
+import { dts } from 'rollup-plugin-dts';
+import terser from '@rollup/plugin-terser';
+import filesize from 'rollup-plugin-filesize';
 
 // Package
 const pkg = require('./package.json');
@@ -16,7 +18,7 @@ const outputDir = 'dist';
  * To review the configuration of this file, as well as add or delete properties,
  * consult the following link.
  *
- * @see https://rollupjs.org/guide/en/
+ * @see https://rollupjs.org/introduction/
  */
 const config = defineConfig([
   {
@@ -53,7 +55,9 @@ const config = defineConfig([
         sourceMap: true,
         minimize: true,
         extensions: ['.css', '.scss']
-      })
+      }),
+      terser(),
+      filesize()
     ]
   },
   {
